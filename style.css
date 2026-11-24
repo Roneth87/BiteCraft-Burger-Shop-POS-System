@@ -112,3 +112,104 @@ th {
     color: white;
 
 }
+
+
+
+.pos-layout {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+
+}
+
+.product-area {
+    flex: 2;
+
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+
+}
+
+.menu-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.menu-item h3 {
+    margin-bottom: 10px;
+
+}
+
+.cart {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.cart input {
+    width: 90%;
+
+}
+
+.cart button {
+    width: 90%;
+
+}
+
+.clear-btn {
+    background: #333;
+    color: white;
+
+}
+
+#cartItems {
+    margin: 20px 0;
+
+}
+
+.cart-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+
+}
+
+button:hover {
+    background: #e68900;
+
+}
+
+.form-box {
+    background: white;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+
+}
+
+input, select {
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}

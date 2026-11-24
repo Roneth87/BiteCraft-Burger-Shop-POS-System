@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" href="assets/img/icon.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="sidebar">
@@ -22,10 +24,45 @@
         <a href="reports.html">Reports</a>
 
     </div>
-    
+
+    <div class="main">
+
+        <h1>Products</h1>
+
+        <div class="pos-layout">
+
+            <div class="product-area">
+
+                <h2>Menu Items</h2>
+
+                <div class="product-grid" id="menuProducts"></div>
+
+            </div>
+
+
+
+            <div class="cart">
+
+                <h2>🛒 Order Cart</h2>
+
+                <input type="text" id="customerName" placeholder="Customer Name">
+
+                <div id="cartItems"></div>
+
+                <h3>Total: Rs. <span id="total">0</span></h3>
+                <button onclick="placeOrder()">Order</button>
+                <button class="clear-btn" onclick="clearCart()">Clear</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
