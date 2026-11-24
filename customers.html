@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BiteCraft Burger Shop</title>
-    
+
     <link rel="icon" href="assets/img/icon.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,6 +22,37 @@
         <a href="reports.html" >Reports</a>
 
     </div>
+
+
+    <div class="main">
+
+    <h1>Manage Customer </h1>
+
+    <div class="form-box">
+
+        <input type="text" id="customerNameInput" placeholder="Customer Name">
+        <input type="tel" id="customerPhone" placeholder="Phone Number">
+
+        <button onclick="addCustomer()">Add Customer</button>
+
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="customerTable"></tbody>
+
+    </table>
+
+</div>
     
 
 
