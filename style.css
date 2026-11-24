@@ -217,10 +217,142 @@ button:hover {
 
 }
 
-input, select {
+input,
+select {
     padding: 12px;
     margin: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+
+}
+
+
+
+/* TABLET RESPONSIVE */
+
+@media screen and (max-width: 1024px) {
+
+    /* Dashboard Cards */
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* Product Grid */
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* POS Layout */
+
+    .pos-layout {
+        gap: 15px;
+    }
+
+    .cart {
+        min-width: 250px;
+    }
+
+}
+
+
+
+/*MOBILE RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+
+    /* Sidebar */
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        padding: 10px;
+        margin: 3px;
+        font-size: 13px;
+    }
+
+
+    /* Main Content */
+
+    .main {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .main h1 {
+        font-size: 24px;
+    }
+
+
+    /* Dashboard Cards */
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+
+    /* POS Layout */
+
+    .pos-layout {
+        flex-direction: column;
+    }
+
+    .product-area,
+    .cart {
+        width: 100%;
+    }
+
+
+    /* Product Grid */
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-img {
+        height: 120px;
+    }
+
+
+    /* Forms */
+
+    input,
+    select {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+
+    /* Tables */
+
+    table {
+        width: 100%;
+    }
+
+    .main {
+        overflow-x: auto;
+    }
 
 }
