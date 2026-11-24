@@ -62,6 +62,16 @@ body {
 
 }
 
+.marquee {
+    background-color: orangered;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +87,7 @@ body {
     flex: 1;
     border-radius: 10px;
     border-left: 5px solid orange;
+    border-right: 5px solid orange;
 
 }
 
@@ -211,5 +222,5 @@ input, select {
     margin: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    
+
 }
