@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
 
     <link rel="icon" href="assets/img/icon.jpg">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
 
     <div class="sidebar">
@@ -23,10 +25,57 @@
         <a href="reports.html">Reports</a>
 
     </div>
-    
+
+    <div class="main">
+
+        <h1>Dashboard</h1>
+        <p>Welcome to GrillMaster POS System</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Sales</h3>
+                <h2 id="totalSales">Rs. 0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Orders</h3>
+                <h2 id="totalOrders">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Products</h3>
+                <h2 id="totalProducts">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Customers</h3>
+                <h2 id="totalCustomers">0</h2>
+            </div>
+
+        </div>
+
+        <h2>Recent Orders</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="recentOrders"></tbody>
+        </table>
+
+    </div>
+
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
