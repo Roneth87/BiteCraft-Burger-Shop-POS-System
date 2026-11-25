@@ -70,6 +70,8 @@ function displayProducts() {
 
     let menu = document.getElementById("menuProducts");
 
+    if (!menu) return;
+
     menu.innerHTML = "";
 
     products.forEach(product => {
@@ -119,6 +121,8 @@ function addToCart(id) {
 function displayCart() {
 
     let cartItems = document.getElementById("cartItems");
+    
+    if (!cartItems) return;
     cartItems.innerHTML = "";
 
     let total = 0;
