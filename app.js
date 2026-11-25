@@ -57,3 +57,37 @@ if (document.getElementById("totalSales")) {
     });
 
 }
+
+
+//-------products--------
+
+let cart = [];
+
+
+// Display Products
+
+function displayProducts() {
+
+    let menu = document.getElementById("menuProducts");
+    
+    menu.innerHTML = "";
+
+    products.forEach(product => {
+
+        menu.innerHTML += `
+
+            <div class="menu-item">
+
+                <h3>${product.name}</h3>
+                <p>Rs. ${product.price}</p>
+                <button onclick="addToCart(${product.id})">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+}
