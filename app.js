@@ -1,6 +1,6 @@
 // Default Products
 
-let products = JSON.parse(localStorage.getItem("products"))  || [
+let products = JSON.parse(localStorage.getItem("products")) || [
 
     { id: 1, name: "Classic Burger", category: "Burger", price: 850 },
     { id: 2, name: "Cheese Burger", category: "Burger", price: 1000 },
@@ -22,7 +22,7 @@ let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
 // Save Data
 
-function saveData(){
+function saveData() {
 
     localStorage.setItem("products", JSON.stringify(products));
     localStorage.setItem("customers", JSON.stringify(customers));
@@ -35,13 +35,13 @@ function saveData(){
 
 if (document.getElementById("totalSales")) {
 
-    document.getElementById("totalSales").innerText = "Rs. " + orders.reduce((sum, order) => sum + order.total, 0);   
-    document.getElementById("totalOrders").innerText = orders.length;                                                 
-    document.getElementById("totalProducts").innerText = products.length;                                             
-    document.getElementById("totalCustomers").innerText = customers.length;      
-    
-    
-     let recent = document.getElementById("recentOrders");
+    document.getElementById("totalSales").innerText = "Rs. " + orders.reduce((sum, order) => sum + order.total, 0);
+    document.getElementById("totalOrders").innerText = orders.length;
+    document.getElementById("totalProducts").innerText = products.length;
+    document.getElementById("totalCustomers").innerText = customers.length;
+
+
+    let recent = document.getElementById("recentOrders");
 
     orders.slice(-5).reverse().forEach(order => {
 
@@ -69,7 +69,7 @@ let cart = [];
 function displayProducts() {
 
     let menu = document.getElementById("menuProducts");
-    
+
     menu.innerHTML = "";
 
     products.forEach(product => {
@@ -91,3 +91,60 @@ function displayProducts() {
     });
 
 }
+
+// Add to Cart
+
+function addToCart(id) {
+
+    let product = products.find(p => p.id === id);
+    let existing = cart.find(item => item.id === id);
+
+    if (existing) {
+        existing.quantity++;
+
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+    }
+
+    displayCart();
+}
+
+
+
+// Display Cart
+
+function displayCart() {
+
+    let cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        total += item.price * item.quantity;
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <p>${item.name}</p>
+
+                <p>Rs. ${item.price} x ${item.quantity}</p>
+
+                <button onclick="changeQuantity(${item.id}, -1)">-</button>
+                <button onclick="changeQuantity(${item.id}, 1)">+</button>
+
+            </div>
+
+        `;
+
+    });
+
+    document.getElementById("total").innerText = total;
+
+}
+
