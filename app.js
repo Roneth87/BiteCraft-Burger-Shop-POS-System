@@ -544,4 +544,3 @@ displayProductsTable();
 displayCustomers();
 displayOrders();
 displayReports();
-
