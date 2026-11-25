@@ -5,9 +5,17 @@ let products = JSON.parse(localStorage.getItem("products")) || [
     { id: 1, name: "Classic Burger", category: "Burger", price: 850 },
     { id: 2, name: "Cheese Burger", category: "Burger", price: 1000 },
     { id: 3, name: "Chicken Burger", category: "Burger", price: 1200 },
-    { id: 4, name: "French Fries", category: "Fries", price: 450 },
-    { id: 5, name: "Coca Cola", category: "Drinks", price: 250 },
-    { id: 6, name: "Sprite", category: "Drinks", price: 250 }
+    { id: 4, name: "Veggie Burger", category: "Burger", price: 700 },
+    { id: 5, name: "Fish Fillet Burger", category: "Burger", price: 1100 },
+    { id: 6, name: "Cheese Fries", category: "Fries", price: 450 },
+    { id: 7, name: "Peri-Peri Fries", category: "Fries", price: 550 },
+    { id: 8, name: "Coca Cola", category: "Drinks", price: 250 },
+    { id: 9, name: "Sprite", category: "Drinks", price: 250 },
+    { id: 10, name: "Fanta Orange", category: "Drinks", price: 250 },
+    { id: 11, name: "Ice Milo", category: "Drinks", price: 400 },
+    { id: 12, name: "Chocolate Milkshake", category: "Drinks", price: 650 },
+    { id: 13, name: "Vanilla Milkshake", category: "Drinks", price: 600 },
+    { id: 14, name: "Mineral Water", category: "Drinks", price: 150 },
 
 ];
 
@@ -121,7 +129,7 @@ function addToCart(id) {
 function displayCart() {
 
     let cartItems = document.getElementById("cartItems");
-    
+
     if (!cartItems) return;
     cartItems.innerHTML = "";
 
