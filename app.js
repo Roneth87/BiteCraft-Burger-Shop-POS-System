@@ -2,20 +2,20 @@
 
 let products = JSON.parse(localStorage.getItem("products")) || [
 
-    { id: 1, name: "Classic Burger", category: "Burger", price: 850 },
-    { id: 2, name: "Cheese Burger", category: "Burger", price: 1000 },
-    { id: 3, name: "Chicken Burger", category: "Burger", price: 1200 },
-    { id: 4, name: "Veggie Burger", category: "Burger", price: 700 },
-    { id: 5, name: "Fish Fillet Burger", category: "Burger", price: 1100 },
-    { id: 6, name: "Cheese Fries", category: "Fries", price: 450 },
-    { id: 7, name: "Peri-Peri Fries", category: "Fries", price: 550 },
-    { id: 8, name: "Coca Cola", category: "Drinks", price: 250 },
-    { id: 9, name: "Sprite", category: "Drinks", price: 250 },
-    { id: 10, name: "Fanta Orange", category: "Drinks", price: 250 },
-    { id: 11, name: "Ice Milo", category: "Drinks", price: 400 },
-    { id: 12, name: "Chocolate Milkshake", category: "Drinks", price: 650 },
-    { id: 13, name: "Vanilla Milkshake", category: "Drinks", price: 600 },
-    { id: 14, name: "Mineral Water", category: "Drinks", price: 150 },
+    { id: 1, name: "Classic Burger", category: "Burger", price: 850, image: "assets/img/Classic Burger.jpeg" },
+    { id: 2, name: "Cheese Burger", category: "Burger", price: 1000, image: "assets/img/Cheese Burger.jpeg" },
+    { id: 3, name: "Chicken Burger", category: "Burger", price: 1200, image: "assets/img/Chicken Burger.jpeg" },
+    { id: 4, name: "Veggie Burger", category: "Burger", price: 700, image: "assets/img/Veggie Burger.jpeg" },
+    { id: 5, name: "Fish Fillet Burger", category: "Burger", price: 1100, image: "assets/img/Fish Fillet Burger.jpeg" },
+    { id: 6, name: "Cheese Fries", category: "Fries", price: 450, image: "assets/img/Cheese Fries.jpeg" },
+    { id: 7, name: "Peri-Peri Fries", category: "Fries", price: 550, image: "assets/img/Peri-Peri Fries.jpeg" },
+    { id: 8, name: "Coca Cola", category: "Drinks", price: 250, image: "assets/img/Coca Cola.jpeg" },
+    { id: 9, name: "Sprite", category: "Drinks", price: 250, image: "assets/img/Sprite .jpeg" },
+    { id: 10, name: "Fanta Orange", category: "Drinks", price: 250, image: "assets/img/Fanta Orange.jpeg" },
+    { id: 11, name: "Ice Milo", category: "Drinks", price: 400, image: "assets/img/Ice Milo.png" },
+    { id: 12, name: "Chocolate Milkshake", category: "Drinks", price: 650, image: "assets/img/Chocolate Milkshake.png" },
+    { id: 13, name: "Vanilla Milkshake", category: "Drinks", price: 600, image: "assets/img/Vanilla Milkshak.png" },
+    { id: 14, name: "Mineral Water", category: "Drinks", price: 150, image: "assets/img/Mineral Water.png" },
 
 ];
 
@@ -87,6 +87,13 @@ function displayProducts() {
         menu.innerHTML += `
 
             <div class="menu-item">
+
+                <img
+                    src="${product.image || 'assets/img/icon.jpg'}"
+                    alt="${product.name}"
+                    class="product-img"
+                    onerror="this.src='assets/img/icon.jpg'"
+                >
 
                 <h3>${product.name}</h3>
                 <p>Rs. ${product.price}</p>
