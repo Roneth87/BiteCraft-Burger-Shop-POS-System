@@ -148,3 +148,31 @@ function displayCart() {
 
 }
 
+
+// Change Quantity
+
+function changeQuantity(id, amount){
+
+    let item = cart.find(p => p.id === id);
+
+     if (!item) return;
+
+    item.quantity += amount;
+
+    if (item.quantity <= 0) {
+        cart = cart.filter(p => p.id !== id);
+    }
+    displayCart();
+}
+
+
+// Clear Cart
+
+function clearCart() {
+
+    cart = [];
+    displayCart();
+
+}
+
+
