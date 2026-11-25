@@ -170,11 +170,11 @@ function displayCart() {
 
 // Change Quantity
 
-function changeQuantity(id, amount){
+function changeQuantity(id, amount) {
 
     let item = cart.find(p => p.id === id);
 
-     if (!item) return;
+    if (!item) return;
 
     item.quantity += amount;
 
@@ -202,22 +202,23 @@ function placeOrder() {
 
     let customer = document.getElementById("customerName").value.trim();
 
-    if(customer === ""){
+    if (customer === "") {
         alert("🔴Please enter customer name..🔴");
         return;
     }
 
-    if (cart.length ===0){
+    if (cart.length === 0) {
 
         alert("🔴Please add products...🔴");
         return;
     }
 
     let total = cart.reduce((sum, item) => {
-        return sum + item.price * item.quantity;}, 0);
+        return sum + item.price * item.quantity;
+    }, 0);
 
 
-    let order ={
+    let order = {
 
         id: Date.now(),
         customer: customer,
@@ -298,34 +299,57 @@ function displayProductsTable() {
 
 // Add Product
 
-function addProduct(){
+function addProduct() {
 
     let name = document.getElementById("productName").value.trim();
     let price = Number(document.getElementById("productPrice").value);
     let category = document.getElementById("productCategory").value;
+    let imageInput = document.getElementById("productImage");
 
-    if (name === "" || price <= 0){
+    if (name === "" || price <= 0) {
 
         alert("⚠️Enter valid product details!");
         return;
 
     }
 
-    products.push({
+    const saveNewProduct = (imageData) => {
 
-        id: Date.now(),
-        name: name,
-        price: price,
-        category: category
-    });
+        products.push({
 
-    saveData();
-    displayProductsTable();
+            id: Date.now(),
+            name: name,
+            price: price,
+            category: category,
+            image: imageData
+        });
 
-    document.getElementById("productName").value = "";
-    document.getElementById("productPrice").value = "";
+        saveData();
+        displayProductsTable();
+        displayProducts();
 
+        document.getElementById("productName").value = "";
+        document.getElementById("productPrice").value = "";
+        imageInput.value = "";
+
+    };
+
+    if (imageInput.files && imageInput.files[0]) {
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            saveNewProduct(e.target.result);
+        };
+
+        reader.readAsDataURL(imageInput.files[0]);
+
+    } else {
+        saveNewProduct("assets/img/icon.jpg");
+
+    }
 }
+
 
 
 // Edit Product
